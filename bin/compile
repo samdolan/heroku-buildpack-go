@@ -128,6 +128,10 @@ p=$GOPATH/src/$name
 mkdir -p $p
 cp -R $build/* $p
 
+sdolan_gh=$GOROOT/src/pkg/github.com/samdolan/
+mkdir -p $sdolan_gh
+ln -s $build $sdolan_gh
+
 # allow apps to specify cgo flags and set up /app symlink so things like CGO_CFLAGS=-I/app/... work
 env_dir="$3"
 if [ -d "$env_dir" ]
